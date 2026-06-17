@@ -39,9 +39,3 @@ src/
 ## Деплой
 
 Vercel или Netlify: build `npm run build`, output `dist/` (конфиги уже в проекте).
-
-## Сдача
-
-1. GitHub + живое демо на хостинге  
-2. PDF из приложения в репозитории (например `samples/demo-scene-1.pdf`)  
-3. Форма: https://forms.yandex.ru/u/6a0db569eb6146662ae0fb45
