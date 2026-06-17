@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
+    <link rel="stylesheet" href="/src/styles/main.css" />
+  </head>
+  <body>
+    <div class="bg-gradient" aria-hidden="true"></div>
+    <div class="bg-grid" aria-hidden="true"></div>
+
+    <div class="app">
+      <header class="header">
+        <div class="header-brand">
+          <div class="logo-mark" aria-hidden="true">
+            <span class="logo-mark__pixi"></span>
+            <span class="logo-mark__skia"></span>
+          </div>
+          <div>
+            <h1>PIXI <span class="header-accent">+</span> Skia</h1>
+            <p class="subtitle">CanvasKit рендер и векторный PDF export</p>
+          </div>
+        </div>
+        <div class="header-badges">
+          <span class="badge badge--pixi">PIXI 7.2.4</span>
+          <span class="badge badge--skia">CanvasKit PDF</span>
+        </div>
+      </header>
+
+      <section class="toolbar" aria-label="Управление">
+        <div class="toolbar-group">
+          <button id="btn-random" type="button" class="btn btn--ghost">
+            <svg class="btn-icon" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+              <path d="M4 10h12M10 4v12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              <circle cx="10" cy="10" r="7" stroke="currentColor" stroke-width="1.5"/>
+            </svg>
+            Случайная фигура
+          </button>
+          <div class="btn-cluster">
+            <button
+              id="btn-prev"
+              type="button"
+              class="btn btn--icon"
+              aria-label="Предыдущая сцена"
+            >
+              <span class="visually-hidden">Предыдущая сцена</span>
+              <svg viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                <path d="M12 4l-6 6 6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+            <span id="scene-label" class="scene-chip">1 · Демо</span>
+            <button
+              id="btn-next"
+              type="button"
+              class="btn btn--icon"
+              aria-label="Следующая сцена"
+            >
+              <span class="visually-hidden">Следующая сцена</span>
+              <svg viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                <path d="M8 4l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+        <button id="btn-export-pdf" type="button" class="btn btn--primary">
+          <svg class="btn-icon" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+            <path d="M10 3v9m0 0l3-3m-3 3l-3-3M4 14v2a1 1 0 001 1h10a1 1 0 001-1v-2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          Экспорт PDF
+        </button>
+      </section>
+
+      <section class="event-bar" aria-label="Лог событий">
+        <div class="event-bar__indicator" aria-hidden="true"></div>
+        <span class="event-bar__label">events</span>
+        <output id="event-log" class="event-log">ожидание взаимодействия…</output>
+      </section>
+
+      <main class="workspace">
+        <article class="canvas-panel canvas-panel--pixi">
+          <header class="panel-header">
+            <span class="panel-dot panel-dot--pixi"></span>
+            <h2>PIXI Canvas</h2>
+            <span class="panel-tag">forceCanvas</span>
+          </header>
+          <div class="canvas-frame">
+            <div id="pixi-container" class="canvas-wrap"></div>
+          </div>
+        </article>
+
+        <article class="canvas-panel canvas-panel--skia">
+          <header class="panel-header">
+            <span class="panel-dot panel-dot--skia"></span>
+            <h2>Skia CanvasKit</h2>
+            <span class="panel-tag">WASM</span>
+          </header>
+          <div class="canvas-frame">
+            <canvas id="skia-canvas" width="800" height="500"></canvas>
+          </div>
+        </article>
+      </main>
+    </div>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
